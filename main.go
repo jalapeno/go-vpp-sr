@@ -370,7 +370,7 @@ func main() {
 			}
 			input = strings.TrimSuffix(input, "\n")
 			BSID := ToVppIP6Address(net.ParseIP(input))
-			fmt.Println("BSID: %s/n", BSID)
+			fmt.Println("BSID: ", BSID)
 			fmt.Println("Please specify the traffic to steer [Addr/Mask]:")
 			reader = bufio.NewReader(os.Stdin)
 			input, err = reader.ReadString('\n')
