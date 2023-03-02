@@ -9,8 +9,11 @@ import (
 	"strings"
 	"time"
 
+
 	"git.fd.io/govpp.git"
 	"git.fd.io/govpp.git/api"
+
+	"github.com/jalapeno/go-vpp-sr/arango"
 
 	interfaces "github.com/jalapeno/go-vpp-sr/vppbinapi/interface"
 	"github.com/jalapeno/go-vpp-sr/vppbinapi/interface_types"
@@ -18,6 +21,7 @@ import (
 	sr "github.com/jalapeno/go-vpp-sr/vppbinapi/sr"
 	"github.com/jalapeno/go-vpp-sr/vppbinapi/sr_types"
 	"github.com/jalapeno/go-vpp-sr/vppbinapi/vpe"
+
 )
 
 func GetVPPVersion(ch api.Channel) error {
@@ -200,6 +204,14 @@ func main() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("GoVPP Ready to Rock!")
 	time.Sleep(500 * time.Millisecond)
+
+
+	err = arangodb.newclient()
+	if err != nil {
+    		fmt.Printf("New DB Client creation failed: %s\n", err)
+		os.Exit(1)
+	}
+	
 	for {
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println()
