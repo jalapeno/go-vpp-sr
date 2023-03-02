@@ -13,7 +13,7 @@ import (
 	"git.fd.io/govpp.git"
 	"git.fd.io/govpp.git/api"
 
-	"github.com/jalapeno/go-vpp-sr/arango"
+	"github.com/jalapeno/go-vpp-sr/arangodb"
 
 	interfaces "github.com/jalapeno/go-vpp-sr/vppbinapi/interface"
 	"github.com/jalapeno/go-vpp-sr/vppbinapi/interface_types"
@@ -206,7 +206,7 @@ func main() {
 	time.Sleep(500 * time.Millisecond)
 
 
-	err = arangodb.newclient()
+	err = arango.newclient()
 	if err != nil {
     		fmt.Printf("New DB Client creation failed: %s\n", err)
 		os.Exit(1)
