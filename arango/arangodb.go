@@ -10,7 +10,7 @@ import (
 
 
 
-func newclient () error {
+func newclient() error {
 
 	conndb, err := http.NewConnection(http.ConnectionConfig{
                 Endpoints: []string{"http://10.200.99.27:30852"},
