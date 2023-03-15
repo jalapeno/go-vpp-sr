@@ -206,7 +206,7 @@ func main() {
 	time.Sleep(500 * time.Millisecond)
 
 
-	err = arangodb.newclient()
+	err = arangodb.Newclient()
 	if err != nil {
     		fmt.Printf("New DB Client creation failed: %s\n", err)
 		os.Exit(1)
